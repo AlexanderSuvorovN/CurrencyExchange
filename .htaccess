@@ -1,0 +1,11 @@
+# Disable directory browsing
+Options All -Indexes
+# ----------------------------------------------------------------------
+# Rewrite engine
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	#RewriteCond %{HTTPS} off
+	#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI}
+	RewriteRule ^([a-zA-Z0-9_-]+(?:/[a-zA-Z0-9_-]+)*)(?:.html|.htm|/)?$ $1.php?%{QUERY_STRING} [QSA,L]
+</IfModule>

@@ -1,0 +1,364 @@
+/*
+**
+** Управление
+**
+*/
+section.controls
+{
+	display: flex;	
+}
+section.controls > div.fieldset
+{
+	margin-right: 24px;
+}
+section.controls > div.fieldset > div.label
+{
+	font-size: 14px;
+	margin-bottom: 4px;
+}
+section.controls > div.fieldset > div.value
+{
+	display: flex;
+}
+section.controls > div.fieldset > div.value > select
+{
+	box-sizing: border-box;
+	min-width: 200px;
+	cursor: pointer;
+	color: #333;
+	padding: 6px 12px;
+	background-color: #eee;
+	border: none;
+}
+section.controls > div.fieldset > div.value > input
+{
+	background-color: #eee;
+	color: #333;
+	padding: 6px 12px;
+	border: none;
+	outline: none;
+}
+section.controls > div.fieldset > div.value > input.invalid
+{
+	background-color: #ffcacaed;
+}
+section.controls > div.fieldset > div.value > button
+{
+	display: block;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	border: none;
+	margin-left: 4px;
+	cursor: pointer;
+	background-color: #1abc9c;
+	background-image: url('/images/icon.calendar.svg');
+	background-size: cover;
+	background-position: center;
+}
+section.chart
+{
+}
+#chartdiv 
+{
+	width: 100%;
+	height: 500px;
+}
+/*
+**
+** Таблица
+**
+*/
+section.fx-table > table
+{
+	box-sizing: border-box;
+	width: 100%;
+	font-size: 14px;
+	border-spacing: 0;
+}
+section.fx-table > table > thead > tr > th
+{
+	/*border-bottom: 2px solid white;*/
+	/*border-top: 2px solid white;*/
+	background-color: #1abc9c;
+	text-align: right;
+	/*padding: 4px 12px;*/
+	padding: 12px 12px;
+}
+section.fx-table > table > thead > tr > th:first-of-type
+{
+	text-align: left;
+}
+section.fx-table > table > tbody > tr > td
+{
+	border-bottom: 1px solid #aaa;
+	text-align: right;
+	padding: 4px 12px;
+}
+section.fx-table > table > tbody > tr > td:first-of-type
+{
+	text-align: left;
+}
+section.fx-table > div.fx
+{	
+	font-size: 16px;
+}
+section.fx-table > div.fx > div.grid
+{
+	display: grid;
+	grid-gap: 2px;
+	grid-template-areas: 
+		"date date date date date date" 
+		"pair pair pair unit unit unit"
+		"fwr8 fwr8 rvr8 rvr8 sprd sprd";
+	margin-bottom: 16px;
+}
+section.fx-table > div.fx > div.grid > div
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #273A42;
+	box-sizing: border-box;
+	padding: 8px;
+}
+section.fx-table > div.fx > div.grid > div > div.label
+{
+	font-size: 10px;
+	/*font-weight: 900;*/
+}
+section.fx-table > div.fx > div.grid > div > div.value
+{
+	font-weight: 900;
+}
+section.fx-table > div.fx > div.grid > div.date
+{
+	grid-area: date;
+	background-color: #1ABC9C;
+}
+section.fx-table > div.fx > div.grid > div.pair 
+{
+	grid-area: pair;
+	/*align-items: flex-start;*/
+}
+section.fx-table > div.fx > div.grid > div.unit 
+{
+	grid-area: unit;
+	/*align-items: flex-start;*/
+}
+section.fx-table > div.fx > div.grid > div.forward-rate 
+{
+	grid-area: fwr8;
+}
+section.fx-table > div.fx > div.grid > div.reverse-rate 
+{
+	grid-area: rvr8;
+}
+section.fx-table > div.fx > div.grid > div.spread 
+{
+	grid-area: sprd;
+}
+/*
+**
+** Приобрести ЭКО
+**
+*/
+body > div.modal.buy-eko 
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, .5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 200;
+}
+body > div.modal.buy-eko > div.window
+{
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+body > div.modal.buy-eko > div.window > div.caption
+{
+	font-weight: 100;
+	background-color: #1abc9c;
+	color: white;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	height: 56px;
+}
+body > div.modal.buy-eko > div.window > div.caption > img.icon 
+{
+	display: block;
+	box-sizing: border-box;
+	width: 32px;
+	height: 32px;
+	flex: 0 0 auto;
+}
+body > div.modal.buy-eko > div.window > div.caption > div.text 
+{
+	margin-left: 8px;
+	flex: 1 1 auto;
+}
+body > div.modal.buy-eko > div.window > div.caption > img.close 
+{
+	margin-left: 8px;
+	margin-right: 8px;
+	display: block;
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	flex: 0 0 auto;
+	cursor: pointer;
+}
+body > div.modal.buy-eko > div.window > div.body
+{
+	box-sizing: border-box;
+	padding: 32px;
+	background-color: white;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+}
+body > div.modal.buy-eko > div.window > div.body > input
+{
+	box-sizing: border-box;
+	width: 100%;
+	min-width: calc(400px - 64px);
+	margin-bottom: 16px;
+	padding: 16px;
+	outline: none;
+	border: 1px solid #ccc;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1;
+}
+body > div.modal.buy-eko > div.window > div.body > select
+{
+	box-sizing: border-box;
+	width: 100%;
+	min-width: calc(400px - 64px);
+	margin-bottom: 16px;
+	padding: 16px;
+	outline: none;
+	border: 1px solid #ccc;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1;
+}
+body > div.modal.buy-eko > div.window > div.body > button
+{
+	display: block;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	font-weight: 900;
+	padding: 16px;
+	background-color: #25262f;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	box-sizing: border-box;
+	width: 100%;
+	border: 1px solid transparent;
+}
+body > div.modal.buy-eko > div.window > div.body > button:hover
+{
+	border: 1px solid white;
+}
+body > div.modal.buy-eko > div.window > div.body > div.grid
+{
+	display: grid;
+	grid-gap: 16px;
+	grid-template-columns: auto auto;
+	margin-bottom: 16px;
+}
+body > div.modal.buy-eko > div.window > div.body > div.grid > div > input
+{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 16px;
+	outline: none;
+	border: 1px solid #ccc;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1;
+}
+/*
+**
+** Message Box
+**
+*/
+div.modal.message-box > div.window > div.body > div.order-confirmation > h1
+{
+	line-height: 1.15;
+}
+/*
+**
+** Подтверждения регистрации заявки
+**
+*/
+div.order-confirmation > table
+{
+	border-collapse: collapse;
+	box-sizing: border-box;
+	width: 100%;
+	border-top: 2px solid #333;
+}
+div.order-confirmation > table td
+{
+	border-bottom: 1px solid #333;
+}
+div.order-confirmation > table td.field
+{
+	font-weight: 900;
+}
+div.order-confirmation > table td.value
+{
+	text-align: right;
+}
+/*
+**
+** Мобильная версия
+**
+*/
+@media (max-width: 992px)
+{
+	section.controls
+	{
+		display: flex;
+		flex-direction: column;
+	}
+	section.controls > div.fieldset
+	{
+		margin-right: 0;
+		margin-bottom: 16px;
+		box-sizing: border-box;
+		width: 100%;		
+	}
+	section.controls > div.fieldset > div.value > select
+	{
+		box-sizing: border-box;
+		width: 100%;
+	}
+	section.controls > div.fieldset > div.value > input
+	{
+		box-sizing: border-box;
+		width: 100%;
+	}
+	body > div.modal.buy-eko > div.window
+	{
+		width: 100vw;
+		height: 100vh;
+	}
+}

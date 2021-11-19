@@ -1,0 +1,368 @@
+body
+{
+	font-family: "Roboto Condensed", sans-serif;
+	font-weight: 300;
+	margin: 0;
+	padding: 0;
+	background-color: #1B272C;
+	box-sizing: border-box;
+	min-height: 100vh;
+	line-height: 1.5;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	--header-height: 50px;
+	--logo-padding: 12px;
+}
+a
+{
+	color: white;
+	text-decoration: none;
+}
+section
+{
+	padding: 16px;
+}
+/*
+**
+** DatePicker
+**
+*/
+div.modal.date-picker
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, .5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+div.modal.date-picker > div.window > div.caption
+{
+	font-weight: 100;
+	background-color: #1abc9c;
+	color: white;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+}
+div.modal.date-picker > div.window > div.caption > img.icon
+{
+	display: block;
+	box-sizing: border-box;
+	width: 32px;
+	height: 32px;
+	flex: 0 0 auto;
+}
+div.modal.date-picker > div.window > div.caption > div.text
+{
+	margin-left: 8px;
+	flex: 1 1 auto;
+}
+div.modal.date-picker > div.window > div.caption > img.close
+{
+	margin-left: 8px;
+	margin-right: 8px;
+	display: block;
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	flex: 0 0 auto;
+	cursor: pointer;
+}
+div.modal.date-picker > div.window > div.body
+{
+	box-sizing: border-box;
+	padding: 32px;
+	background-color: white;
+	color: #333;
+}
+div.modal.date-picker > div.window > div.body > div.controls
+{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+div.modal.date-picker > div.window > div.body > div.controls > button
+{
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background-color: #1abc9c;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+}
+div.modal.date-picker > div.window > div.body > div.controls > button.prev
+{
+	background-image: url('/images/icon.arrow-left.svg');
+}
+div.modal.date-picker > div.window > div.body > div.controls > button.next
+{
+	background-image: url('/images/icon.arrow-right.svg');
+}
+div.modal.date-picker > div.window > div.body > div.controls > div.display
+{
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+}
+div.modal.date-picker > div.window > div.body > div.grid
+{
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+	grid-column-gap: 4px;
+	grid-row-gap: 4px;
+	font-size: 14px;
+	margin-top: 8px;
+}
+div.modal.date-picker > div.window > div.body > div.grid > div
+{
+	box-sizing: border-box;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+div.modal.date-picker > div.window > div.body > div.grid > div.header
+{
+	font-weight: 400;
+	/*background-color: #eee;*/
+}
+div.modal.date-picker > div.window > div.body > div.grid > div.item
+{
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+div.modal.date-picker > div.window > div.body > div.grid > div.item:not(.curr)
+{
+	opacity: 0.25;
+}
+div.modal.date-picker > div.window > div.body > div.grid > div.item.weekend
+{
+	background-color: #eee;
+}
+div.modal.date-picker > div.window > div.body > div.grid > div.item:hover
+{
+	background-color: #1a87bc;
+	color: white;
+}
+/*
+**
+** Ticker
+**
+*/
+div.efx-ticker
+{
+	font-size: 16px;
+	font-weight: 100;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	padding: 0px;
+	width: 100%;
+	overflow: hidden;
+}
+div.efx-ticker > div.frame
+{
+	display: flex;
+	align-items: center;
+	position: relative;
+    /*animation-name: ticker;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-duration: 120s;*/
+}
+div.efx-ticker > div.frame > div.item
+{
+	display: flex;
+	align-items: flex-end;
+	padding: 4px;
+	margin-right: 8px;
+}
+div.efx-ticker > div.frame > div.item.fxname
+{
+	width: max-content;
+}
+div.efx-ticker > div.frame > div.item.date
+{
+	width: max-content;
+}
+div.efx-ticker > div.frame > div.item.quote:hover
+{
+	opacity: .75;
+	cursor: pointer;
+}
+div.efx-ticker > div.frame > div.item.quote > div.pair
+{
+	margin-right: 8px;
+}
+div.efx-ticker > div.frame > div.item.quote > div.rate
+{
+	font-size: 16px;
+	font-weight: 900;
+	margin-right: 4px;
+}
+div.efx-ticker > div.frame > div.item.quote > div.change.flat
+{
+	color: #059cf7;
+}
+div.efx-ticker > div.frame > div.item.quote > div.change.up
+{
+	color: #68be0a;
+}
+div.efx-ticker > div.frame > div.item.quote > div.change.down
+{
+	color: #ff352d;
+}
+/*
+**
+** News Ticker
+**
+*/
+div.efx-news-ticker
+{
+	display: flex;
+	overflow: hidden;
+	font-size: 14px;
+	/*text-transform: uppercase;*/
+	padding: 6px;
+}
+div.efx-news-ticker > div.frame
+{
+	position: relative;
+	display: flex;
+}
+div.efx-news-ticker > div.frame > div.item
+{
+	display: flex;
+	width: max-content;
+	box-sizing: border-box;
+	padding: 0px 8px;
+	cursor: pointer;
+}
+/*
+**
+** Message Box
+**
+*/
+div.modal.message-box
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(0, 0, 0, .5);
+}
+div.modal.message-box > div.window
+{
+	background-color: white;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+div.modal.message-box > div.window > div.caption 
+{
+	font-weight: 100;
+	background-color: #1abc9c;
+	color: white;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	height: 56px;
+}
+div.modal.message-box > div.window > div.caption > img.icon 
+{
+	display: block;
+	box-sizing: border-box;
+	width: 32px;
+	height: 32px;
+	flex: 0 0 auto;
+}
+div.modal.message-box > div.window > div.caption > div.text 
+{
+    margin-left: 8px;
+    flex: 1 1 auto;
+}
+div.modal.message-box > div.window > div.caption > img.close 
+{
+	margin-left: 8px;
+	margin-right: 8px;
+	display: block;
+	box-sizing: border-box;
+	width: 24px;
+	height: 24px;
+	flex: 0 0 auto;
+	cursor: pointer;
+}
+div.modal.message-box > div.window > div.body 
+{
+	box-sizing: border-box;
+	padding: 32px;
+	background-color: white;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+}
+div.modal.message-box > div.window > div.body > div.controls
+{
+	margin-top: 32px;
+	display: flex;
+	justify-content: center;
+}
+div.modal.message-box > div.window > div.body > div.controls > button
+{
+	display: block;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	font-weight: 900;
+	padding: 16px;
+	background-color: #25262f;
+	color: #fff;
+	cursor: pointer;
+	border: none;
+	box-sizing: border-box;
+	width: 50%;
+	border: 1px solid transparent;
+}
+div.modal.message-box > div.window > div.body > div.controls > button:hover
+{
+	border: 1px solid white;
+}
+/*
+**
+** Мобильная версия
+**
+*/
+@media (max-width: 992px)
+{
+	div.modal.message-box
+	{
+		justify-content: flex-start;
+	}
+	div.modal.message-box > div.window
+	{
+		/*margin-top: 10vh;*/
+		width: 100vw;
+		height: 100vh;
+	}
+	div.modal.message-box > div.window > div.body > div.controls > button
+	{
+		width: 100%;
+	}
+}
